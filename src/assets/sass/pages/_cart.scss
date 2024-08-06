@@ -1,0 +1,329 @@
+.cart {
+  &__content-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+
+  &__content {
+    display: grid;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e5e5;
+    overflow-x: scroll;
+    white-space: nowrap;
+    height: min-content;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    & {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+
+    &--table {
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      & {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      table {
+        border-spacing: 0;
+        width: 100%;
+        text-align: center;
+
+        thead {
+          tr {
+            height: 4.7rem;
+            padding: 0 2.4rem;
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns:
+              minmax(27rem, 1fr) minmax(8rem, 1fr) minmax(13rem, 1fr)
+              minmax(8rem, 1fr) 2.4rem;
+            align-items: center;
+            justify-content: start;
+            border-bottom: 1px solid #e5e5e5;
+
+            th {
+              font-size: 1.4rem;
+              line-height: 1.4rem;
+              letter-spacing: 0.03em;
+              font-weight: 500;
+              color: #808080;
+              text-transform: uppercase;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    padding: 1rem 2.4rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns:
+      minmax(27rem, 1fr) minmax(8rem, 1fr) minmax(13rem, 1fr)
+      minmax(8rem, 1fr) 2.4rem;
+    align-items: center;
+
+    &:not(:first-child) {
+      border-top: 1px solid #e5e5e5;
+    }
+
+    &--product {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+
+      a,
+      img {
+        height: 10rem;
+        width: 10rem;
+        // object-fit: cover;
+        object-fit: contain;
+      }
+
+      h5 {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: #1a1a1a;
+        font-weight: 400;
+        text-align: start;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 15rem;
+        white-space: nowrap;
+      }
+    }
+
+    &--price {
+      width: 100%;
+
+      p {
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+
+    &--counter {
+      width: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--subtotal {
+      width: 100%;
+
+      p {
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+
+    &--delete {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      div {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        border: 1px solid #e5e5e5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+          width: 1.2rem;
+          height: 1.2rem;
+        }
+      }
+    }
+  }
+
+  &__action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e5e5e5;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__content--empty {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+      font-weight: 500;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__content--error {
+    @extend .cart__content--empty;
+    h2 {
+      color: red;
+    }
+  }
+}
+
+/// CART RESPONSIVE
+.cart {
+  @media (max-width: 768px) {
+    &__content-container {
+      display: grid;
+      grid-template-columns: unset;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__content--table {
+      table {
+        thead {
+          tr {
+            height: 3.5rem;
+            padding: 0 1.6rem;
+            grid-template-columns:
+              minmax(21rem, 1fr) minmax(6rem, 1fr) minmax(10rem, 1fr)
+              minmax(7rem, 1fr) 2.4rem;
+
+            th {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__item {
+      grid-template-columns:
+        minmax(21rem, 1fr) minmax(6rem, 1fr) minmax(10rem, 1fr)
+        minmax(7rem, 1fr) 2.4rem;
+      padding: 0.5rem 1.6rem;
+
+      &--product {
+        gap: 1rem;
+
+        a,
+        img {
+          height: 6rem;
+          width: 6rem;
+        }
+
+        h5 {
+          font-size: 1.2rem;
+          line-height: unset;
+          width: 13rem;
+        }
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      &--delete {
+        div {
+          height: 2rem;
+          width: 2rem;
+
+          img {
+            height: 1rem;
+            width: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bill-card {
+  position: relative;
+  width: 100%;
+  padding: 2.4rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  height: min-content;
+
+  &__top {
+    h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &__detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    p {
+      color: #4d4d4d;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+    span {
+      color: #1a1a1a;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    &:last-child {
+      border-bottom: unset;
+      span {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  &__action {
+    text-decoration: none;
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+/// BILL CARD RESPONSIVE
+.bill-card {
+  @media (max-width: 900px) {
+    padding: 1.8rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1.2rem;
+
+    &__action {
+      margin-top: 1.5rem;
+    }
+
+    &__top {
+      h2 {
+        margin-bottom: 0.6rem;
+      }
+    }
+  }
+}

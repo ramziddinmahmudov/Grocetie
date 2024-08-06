@@ -1,0 +1,103 @@
+.address-form {
+  border: 1px solid #e5e5e5;
+  border-radius: 0.8rem;
+  background-color: #fff;
+  z-index: 100;
+  width: 84.6rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__header {
+    padding: 1.6rem 2.4rem;
+    border-bottom: 1px solid #e5e5e5;
+    text-transform: capitalize;
+    color: #1a1a1a;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__main {
+    padding: 2.4rem;
+
+    .form-inputs:last-child {
+      margin-bottom: unset;
+    }
+
+    .weight-inputBox {
+      display: flex;
+      gap: 1rem;
+
+      .chosen,
+      .options {
+        text-transform: unset;
+      }
+
+      .chosen {
+        height: 100%;
+        width: 100%;
+      }
+      .choose {
+        min-width: max-content;
+        height: 5rem;
+        align-self: flex-end;
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 1.6rem 2.4rem;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      display: flex;
+    }
+
+    .delete-button {
+      margin-right: 1rem;
+      background-color: red;
+    }
+
+    button {
+      font-size: 1.5rem;
+    }
+
+    button:last-child {
+      background-color: #3a4374;
+    }
+  }
+}
+
+////////////////////////////
+/// ADDRESS FORM RESPONSIVE
+.address-form {
+  @media (max-width: 850px) {
+    width: 95%;
+  }
+
+  @media (max-width: 768px) {
+    &__header {
+      padding: 1.2rem 1.5rem;
+    }
+
+    &__main {
+      padding: 1.5rem;
+    }
+
+    &__bottom {
+      padding: 1.2rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 450px) {
+    &__main {
+      .form-inputs {
+        flex-direction: column;
+      }
+    }
+  }
+}

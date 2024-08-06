@@ -1,0 +1,45 @@
+.terms-container {
+  max-width: 75rem;
+  margin: 0 auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.8rem;
+}
+
+.terms {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e5e5;
+
+  &:last-child {
+    border-bottom: unset;
+  }
+  &__header {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  &__item {
+    &--header {
+      font-size: 1.3rem;
+      color: #1a1a1a;
+      margin-bottom: 0.6rem;
+    }
+
+    &--text {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+
+      span {
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+    }
+  }
+}

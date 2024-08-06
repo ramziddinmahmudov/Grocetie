@@ -1,0 +1,108 @@
+.section-xl {
+  padding: 8rem 0;
+  background-color: linear-gradient(180deg, #f2f5f3 20.01%, #ffffff 100%);
+
+  @media (max-width: 768px) {
+    padding: 5rem 0;
+  }
+
+  @media (max-width: 600px) {
+    padding: 3rem 0;
+  }
+}
+
+.section-lg {
+  padding: 5rem 0;
+
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 600px) {
+    padding: 2.5rem 0;
+  }
+}
+
+.section-md {
+  padding: 4rem 0;
+
+  @media (max-width: 900px) {
+    padding: 2.5rem 0;
+  }
+
+  @media (max-width: 600px) {
+    padding: 2rem 0;
+  }
+}
+
+.section-sm {
+  padding: 3rem 0;
+  @media (max-width: 600px) {
+    padding: 1.5rem 0;
+  }
+}
+
+.section__head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3.2rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    color: #1a1a1a;
+    text-transform: capitalize;
+    font-size: 4rem;
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 600px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 2rem;
+    }
+  }
+}
+
+// ALL PRODUCTS SECTION HEAD RESPONSIVE
+.all-products__section-head {
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ul {
+    @media (max-width: 768px) {
+      position: unset;
+    }
+  }
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  column-gap: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #00b207;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  cursor: pointer;
+
+  &:hover {
+    color: #2c742f;
+  }
+
+  img {
+    height: 1.7rem;
+    width: 1.5rem;
+    transform: rotate(-90deg);
+  }
+}

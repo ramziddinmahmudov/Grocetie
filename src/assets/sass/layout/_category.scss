@@ -1,0 +1,96 @@
+.category {
+  &__item {
+    width: 20rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    background-color: #fff;
+    padding: 2rem 0 2rem 0;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+
+    &:hover {
+      border: 1px solid #2c742f;
+      transition: all 0.3s linear;
+      box-shadow: 0 0 1.2rem 0 #20b52652;
+    }
+
+    img {
+      height: 8rem;
+    }
+
+    h5 {
+      margin: 1.6rem 0.5rem 0 0.5rem;
+      color: #1a1a1a;
+      font-size: 1.8rem;
+      font-weight: 500;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: calc(100% - 12px);
+      white-space: nowrap;
+    }
+
+    .quantity {
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+      color: #808080;
+      font-weight: 400;
+      margin-top: 0.6rem;
+    }
+  }
+
+  .swiper-slide {
+    width: 19.6rem;
+    margin-right: 2rem;
+
+    @media (max-width: 600px) {
+      margin-right: 1rem;
+    }
+
+    &:last-child {
+      margin-right: unset;
+    }
+  }
+}
+
+/// Categories
+.categories {
+  .section__head {
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+  }
+
+  &__main {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .category__item {
+    position: relative;
+
+    button {
+      position: absolute;
+      padding: 0.5rem;
+      top: 1rem;
+      left: 1rem;
+    }
+  }
+}
+
+.products-by-category {
+  .no-products-found {
+    h2 {
+      font-size: 3rem;
+      font-weight: 500;
+      text-align: center;
+
+      @media (max-width: 600px) {
+        font-size: 2rem;
+      }
+    }
+  }
+}

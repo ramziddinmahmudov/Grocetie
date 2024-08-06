@@ -1,0 +1,234 @@
+.wishlist {
+  &__table {
+    border-radius: 0.5rem;
+    border: 1px solid #e5e5e5;
+    overflow-x: scroll;
+
+    table {
+      width: 100%;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    & {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+
+  .wishlist-cart__empty {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    td {
+      padding: 2rem;
+      h2 {
+        font-weight: 500;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .wishlist-cart__error {
+    @extend .wishlist-cart__empty;
+
+    td {
+      h2 {
+        color: red;
+      }
+    }
+  }
+
+  &__item {
+    display: grid;
+    padding: 1rem 0 1rem 2rem;
+    justify-content: space-between;
+    gap: 1.5rem;
+    grid-template-columns:
+      minmax(27rem, 1fr) minmax(11rem, 1fr) minmax(10.5rem, 1fr)
+      minmax(21rem, 1fr);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    &--product {
+      display: flex;
+      align-items: center;
+      column-gap: 1.5rem;
+
+      h5 {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: #1a1a1a;
+        font-weight: 400;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 15rem;
+        white-space: nowrap;
+      }
+    }
+
+    &--image {
+      width: 10rem;
+      height: 10rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+        // object-fit: cover;
+        object-fit: contain;
+      }
+    }
+
+    &--price {
+      display: flex;
+      align-items: center;
+      min-width: max-content;
+      justify-content: center;
+
+      p {
+        font-size: 1.6rem;
+        font-weight: 500;
+
+        del {
+          color: #999999;
+          font-weight: 400;
+        }
+      }
+    }
+
+    &--stock {
+      display: flex;
+      align-items: center;
+      justify-self: center;
+      min-width: max-content;
+    }
+
+    &--actions {
+      display: flex;
+      align-items: center;
+      column-gap: 2.5rem;
+      padding-right: 2rem;
+      justify-content: right;
+
+      button {
+        &:first-child {
+          transition: all 0.15s ease-in-out;
+          width: 14rem;
+
+          &:hover {
+            background-color: #2c742f;
+          }
+          &:active {
+            transform: scale(0.99);
+          }
+
+          &:disabled {
+            background-color: #f2f2f2 !important;
+            color: #b2b2b2 !important;
+            cursor: default !important;
+
+            &:active {
+              transform: unset;
+            }
+          }
+        }
+      }
+
+      p {
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+///////////////////////////////////
+/// WISHLIST RESPONSIVE
+.wishlist {
+  @media (max-width: 768px) {
+    &__item--actions button {
+      &:first-child {
+        width: 12.8rem;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__item {
+      grid-template-columns:
+        minmax(17rem, 1fr) minmax(8rem, 1fr) minmax(8.6rem, 1fr)
+        minmax(17rem, 1fr);
+      &--product {
+        column-gap: 1rem;
+        h5 {
+          font-size: 1.3rem;
+          width: 10rem;
+        }
+      }
+
+      &--image {
+        width: 6rem;
+        height: 6rem;
+      }
+
+      &--price {
+        p {
+          font-size: 1.3rem;
+        }
+      }
+
+      &--actions {
+        button {
+          &:first-child {
+            width: 10.5rem;
+            svg {
+              height: 2.3rem;
+              width: 2.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+  }
+}
+
+/// DELETE ICON
+.delete-item {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  background: none;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  @media (max-width: 600px) {
+    width: 2.2rem;
+    height: 2.2rem;
+
+    img {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}

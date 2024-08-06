@@ -1,0 +1,93 @@
+.social-share {
+  height: auto;
+  width: auto;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  border-radius: 0.8rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  padding: 2.4rem;
+  text-align: center;
+
+  @media (max-width: 500px) {
+    padding: 1.5rem;
+    width: max-content;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #999999;
+    margin-top: 1rem;
+  }
+
+  &__buttons {
+    display: grid;
+    width: min-content;
+    height: min-content;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+    margin: 0 auto;
+
+    button {
+      &:nth-child(1) {
+        grid-row: 1/2;
+        grid-column: 2/3;
+      }
+      &:nth-child(2) {
+        grid-row: 2/3;
+        grid-column: 3/4;
+      }
+      &:nth-child(3) {
+        grid-row: 3/4;
+        grid-column: 2/3;
+      }
+      &:nth-child(4) {
+        grid-row: 2/3;
+        grid-column: 1/2;
+      }
+      &:nth-child(5) {
+        grid-row: 2/3;
+        grid-column: 2/3;
+      }
+    }
+  }
+}
+
+.share-icon-box {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4d4d4d;
+  transition: all 0.3s linear;
+  margin: 0;
+
+  &:hover {
+    color: #fff;
+    background-color: #00b207;
+    transition: all 0.3s linear;
+
+    svg {
+      fill: #fff;
+      transition: all 0.3s linear;
+    }
+  }
+
+  svg {
+    fill: #4d4d4d;
+  }
+}

@@ -1,0 +1,120 @@
+.settings {
+  .account-settings {
+    border: 1px solid #e5e5e5;
+    border-radius: 0.8rem;
+
+    &__form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      padding: 2.4rem;
+    }
+    &__inputs {
+      display: grid;
+      row-gap: 1rem;
+
+      button {
+        font-size: 1.5rem;
+        justify-self: left;
+        margin-top: 1rem;
+      }
+    }
+
+    &__photo {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      row-gap: 2rem;
+      img {
+        height: 22.4rem;
+        width: 22.4rem;
+        border-radius: 50%;
+      }
+
+      label {
+        font-size: 1.5rem;
+        margin: 0 auto;
+      }
+
+      input {
+        display: none;
+      }
+    }
+  }
+
+  .user-addresses {
+    .address-book__items {
+      height: auto;
+    }
+  }
+
+  .user-password {
+    border: 1px solid #e5e5e5;
+    border-radius: 0.8rem;
+
+    &__form {
+      padding: 2.4rem;
+      display: grid;
+      row-gap: 1.5rem;
+
+      button {
+        font-size: 1.5rem;
+        justify-self: left;
+      }
+
+      .new-passwords {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+  }
+}
+
+////////////////////////////
+/// SETTINGS RESPONSIVE
+.settings {
+  @media (max-width: 600px) {
+    .account-settings {
+      &__form {
+        grid-template-columns: unset;
+        gap: 2rem;
+        padding: 1.2rem 1.8rem;
+      }
+
+      &__inputs {
+        grid-row: 2/3;
+
+        button {
+          font-size: 1.3rem;
+          margin-top: 0.5rem;
+        }
+      }
+
+      &__photo {
+        grid-row: 1/2;
+        row-gap: 1.5rem;
+
+        img {
+          height: 18rem;
+          width: 18rem;
+        }
+      }
+    }
+
+    .user-password {
+      .address-form__header {
+        padding: 1.2rem 1.8rem;
+        font-size: 1.7rem;
+      }
+
+      &__form {
+        padding: 1.2rem 1.8rem;
+
+        .new-passwords {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+}

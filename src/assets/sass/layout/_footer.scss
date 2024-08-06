@@ -1,0 +1,254 @@
+.footer {
+  background-color: #1a1a1a;
+
+  /// FOOTER TOP
+  &__top {
+    padding: 6.6rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  }
+
+  &__brand-info {
+    h4 {
+      margin-bottom: 1.6rem;
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    p {
+      color: #808080;
+      max-width: 35rem;
+      margin-bottom: 2.2rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+  }
+
+  &__brand-contact {
+    color: #808080;
+    font-size: 1.2rem;
+    span {
+      font-size: 1.4rem;
+      margin: 0 1.6rem;
+      max-width: 25rem;
+      color: #fff;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid #00b207;
+      font-weight: 500;
+      transition: all 0.3s linear;
+      cursor: pointer;
+
+      &:hover {
+        color: #00b207;
+        border-color: #2c742f;
+      }
+    }
+    span:nth-child(1) {
+      margin-left: 0;
+    }
+
+    span:nth-child(2) {
+      margin-right: 0;
+    }
+  }
+
+  &__navigation {
+    text-align: center;
+    li {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    &--title {
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    &--link {
+      &:nth-child(5) {
+        margin-bottom: 0;
+      }
+      a {
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: #999999;
+        transition: all 0.3s linear;
+        text-transform: capitalize;
+        cursor: pointer;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__navigation-container {
+    display: flex;
+    column-gap: 3rem;
+  }
+
+  &__mobile {
+    &--content {
+      width: max-content;
+      margin: 0 auto;
+    }
+
+    &--item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background-color: #333333;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      transition: all 0.3s linear;
+
+      &:hover {
+        background-color: #4d4d4d;
+      }
+      &:nth-child(1) {
+        margin-bottom: 1.5rem;
+      }
+
+      img {
+        margin-right: 0.8rem;
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      &-info {
+        h5 {
+          color: #b2b2b2;
+          font-size: 1.1rem;
+          line-height: 1.43rem;
+        }
+        h2 {
+          color: #fff;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+  }
+
+  /// FOOTER BOTTOM
+  &__bottom {
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid #333333;
+  }
+
+  &__copyright {
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    font-weight: 400;
+    color: #808080;
+  }
+}
+
+// SOCIAL MEDIA APPS ICONS
+.social__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--link {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.8rem;
+    border-radius: 50%;
+    transition: all 0.3s linear;
+    cursor: pointer;
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      color: #b3b3b3;
+      fill: #b3b3b3;
+      transition: all 0.3s linear;
+    }
+
+    &:hover {
+      color: #fff;
+      fill: #fff;
+      background-color: #00b207;
+
+      svg {
+        color: #fff;
+        fill: #fff;
+      }
+    }
+  }
+}
+
+// FOOTER RESPONSIVE
+.footer {
+  @media (max-width: 768px) {
+    &__top {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      row-gap: 2rem;
+      padding: 3rem 0;
+    }
+
+    &__brand-contact span {
+      margin: 0 1rem;
+    }
+
+    &__mobile {
+      grid-column: 1/3;
+      justify-self: center;
+    }
+
+    &__mobile--content {
+      display: flex;
+      column-gap: 2rem;
+    }
+    &__mobile--item {
+      height: max-content;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  @media (max-width: 660px) {
+    &__top {
+      display: flex;
+      flex-direction: column;
+      row-gap: 3rem;
+    }
+
+    &__brand-info {
+      text-align: center;
+      h4 {
+        margin-bottom: 0;
+      }
+
+      p {
+        margin-bottom: 1.2rem;
+      }
+    }
+
+    &__navigation-container {
+      width: 100%;
+      justify-content: space-around;
+    }
+
+    &__bottom {
+      display: grid;
+      padding: 1.5rem 0;
+      justify-content: center;
+      row-gap: 1.5rem;
+    }
+  }
+}

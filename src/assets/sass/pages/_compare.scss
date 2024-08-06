@@ -1,0 +1,112 @@
+.compare {
+  &-list {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  &-item {
+    max-width: 40rem;
+    display: grid;
+    row-gap: 1rem;
+    border-radius: 0.8rem;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.3s linear;
+
+    &:hover {
+      .options-box__icon {
+        visibility: visible;
+      }
+    }
+
+    &__main {
+      display: grid;
+      padding: 0 1.2rem 1.2rem;
+      row-gap: 0.5rem;
+    }
+
+    &__img-box {
+      height: 30rem;
+      position: relative;
+
+      span {
+        position: absolute;
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      span {
+        margin-right: 0.4rem;
+        font-weight: 500;
+      }
+    }
+
+    &__img {
+      height: 100%;
+      width: 100%;
+      border-top-right-radius: 0.8rem;
+      border-top-left-radius: 0.8rem;
+      object-fit: cover;
+    }
+
+    &__ratings {
+      margin-bottom: -0.3rem;
+    }
+
+    &__price {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+
+      .discounted-price {
+        color: #b2b2b2;
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+      h2 {
+        color: #2c742f;
+        font-size: 1.9rem;
+        font-weight: 500;
+      }
+    }
+
+    &__description {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #808080;
+    }
+  }
+}
+
+// OPTIONS BOX
+.options-box {
+  position: absolute;
+  display: grid;
+  top: 1rem;
+  right: 1rem;
+
+  img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &__icon {
+    visibility: hidden;
+    display: grid;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    justify-self: right;
+    transition: all 0.3s linear;
+  }
+
+  .options {
+    position: unset;
+  }
+}

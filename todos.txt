@@ -1,0 +1,8 @@
+Tasks To Complete 
+- Loading data as it is requested in scroll
+- make buttons reusable and add spinner when loading
+- add delete account component
+- add loading spinner to every button
+- disable update or save button when there are no changes to the object.  
+- all inputs validation in all pages
+- fix product cards, news, categories responsive 
